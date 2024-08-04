@@ -34,7 +34,6 @@ export default function AartiCard({ aarti }) {
                 borderRadius:15,
                 gap: 10,
                 marginBottom:8,
-                // backgroundColor:Colors.gray
             }}>
                 <Image
                     source={{ uri: aarti.image }}
@@ -45,8 +44,12 @@ export default function AartiCard({ aarti }) {
                 />
                 <Text style={{
                     top: 10,
-                    fontSize: 20,
-                }}>{aarti.title}</Text>
+                    fontSize: 18,
+                    width:'83%'
+                }}
+                numberOfLines={1} 
+                ellipsizeMode="tail" 
+                >{aarti.title}</Text>
             </View>
             
         </TouchableOpacity>

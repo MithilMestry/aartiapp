@@ -55,7 +55,11 @@ export default function MantraCard({mantra}) {
     <Text style={{
             marginTop: '5%',
             fontSize: 20,
-        }}>{mantra.title}</Text>
+            width:'75%'
+        }}
+        numberOfLines={1} 
+        ellipsizeMode="tail" 
+        >{mantra.title}</Text>
 
       {/* <Text>MantraCard</Text> */}
     </View>
