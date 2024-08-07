@@ -1,7 +1,7 @@
-import { View, Text } from 'react-native';
-import React, { useState } from 'react';
+import { View, Text } from "react-native";
+import React, { useState } from "react";
 import AartiList from "./../../components/AartiList";
-import InternetConnect from '../InternetConnect';
+import InternetConnect from "../InternetConnect";
 
 export default function Home() {
   const [connect, setConnect] = useState(false);
@@ -15,4 +15,3 @@ export default function Home() {
     </View>
   );
 }
-
