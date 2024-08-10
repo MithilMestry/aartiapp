@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, FlatList } from "react-native";
+import { View, Text, ScrollView, FlatList, ActivityIndicator } from "react-native";
 import React, { useEffect, useState } from "react";
 import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { db } from "./../../config/FirebaseConfig";
@@ -7,12 +7,14 @@ import QnaCard from "./QnaCard";
 
 export default function QnaList() {
   const [qna, SetQna] = useState();
+  const [loading,setLoading]=useState(false);
 
   useEffect(() => {
     GetQnaList();
   }, []);
 
   const GetQnaList = async () => {
+    setLoading(true);
     SetQna([]);
     const q = query(collection(db, "qna"), orderBy("order"));
     const querySnapShot = await getDocs(q);
@@ -23,10 +25,20 @@ export default function QnaList() {
       qnas.push({ id: doc.id, ...doc.data() });
     });
     SetQna(qnas);
+    setLoading(false);
   };
 
   return (
     <View>
+      {loading?
+      <ActivityIndicator 
+      size={'large'}
+      color={Colors.primary}
+      style={{
+        marginTop:'100%'
+      }}
+      />
+      :
       <ScrollView>
         <View
           style={{
@@ -62,7 +74,7 @@ export default function QnaList() {
             keyExtractor={(item) => item.id}
           />
         </View>
-      </ScrollView>
+      </ScrollView>}
     </View>
   );
 }

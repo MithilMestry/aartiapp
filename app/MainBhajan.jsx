@@ -9,7 +9,7 @@ export default function MainBhajan() {
   const { bhajanid } = useLocalSearchParams();
   const [bhajan, setBhajan] = useState();
 
-  const [fontSize, setFontSize] = useState(20);
+  const [fontSize, setFontSize] = useState(18);
 
   useEffect(() => {
     if (bhajanid) {
@@ -100,6 +100,7 @@ export default function MainBhajan() {
                   marginTop: 20,
                   fontSize: fontSize,
                   textAlign: "center",
+                  marginBottom:280,
                 }}
               >
                 {bhajan.data.replace(/\./g, "\n")}

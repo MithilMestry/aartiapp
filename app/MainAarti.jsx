@@ -9,7 +9,7 @@ export default function MainAarti() {
   const router = useRouter();
   const { aartiid } = useLocalSearchParams();
   const [aarti, setAarti] = useState(null);
-  const [fontSize, setFontSize] = useState(20); // Initialize font size state
+  const [fontSize, setFontSize] = useState(18); // Initialize font size state
 
   useEffect(() => {
     if (aartiid) {

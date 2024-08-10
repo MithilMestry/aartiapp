@@ -102,6 +102,7 @@ export default function MainQna() {
                   marginTop: 20,
                   fontSize: fontSize,
                   textAlign: "center",
+                  marginBottom:280,
                 }}
               >
                 {qna.data.replace(/\./g, "\n")}

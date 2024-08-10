@@ -1,4 +1,4 @@
-import { View, Text, FlatList, ScrollView, TextInput } from "react-native";
+import { View, Text, FlatList, ScrollView, TextInput, ActivityIndicator } from "react-native";
 import React, { useEffect, useState } from "react";
 import { collection, getDocs, query, orderBy } from "firebase/firestore";
 import { db } from "./../config/FirebaseConfig";
@@ -9,6 +9,7 @@ export default function AartiList() {
   const [aartiList, setAartiList] = useState([]);
   const [filteredAartiList, setFilteredAartiList] = useState([]);
   const [search, setSearch] = useState("");
+  const [loading,setLoading]=useState(false);
 
   useEffect(() => {
     GetAartiList();
@@ -19,6 +20,7 @@ export default function AartiList() {
   }, [search, aartiList]);
 
   const GetAartiList = async () => {
+    setLoading(true);
     setAartiList([]);
     const q = query(collection(db, "aarti"), orderBy("order"));
     const querySnapShot = await getDocs(q);
@@ -29,6 +31,7 @@ export default function AartiList() {
     });
     setAartiList(aartis);
     setFilteredAartiList(aartis);
+    setLoading(false);
   };
 
   const filterAartiList = () => {
@@ -40,7 +43,16 @@ export default function AartiList() {
 
   return (
     <View>
+        {loading?
+        <ActivityIndicator 
+        size={"large"}
+        color={Colors.primary}
+        style={{
+          marginTop:"100%"
+        }}
+        /> : 
       <ScrollView>
+        
         <View
           style={{
             padding: 80,
@@ -83,6 +95,8 @@ export default function AartiList() {
             />
           </View>
 
+        
+      
           <FlatList
             data={filteredAartiList}
             renderItem={({ item }) => (
@@ -93,7 +107,7 @@ export default function AartiList() {
             keyExtractor={(item) => item.id}
           />
         </View>
-      </ScrollView>
+      </ScrollView>}
     </View>
   );
 }

@@ -9,7 +9,7 @@ export default function MainMantra() {
   const { mantraid } = useLocalSearchParams();
   const [mantra, setMantra] = useState();
 
-  const [fontSize, setFontSize] = useState(20);
+  const [fontSize, setFontSize] = useState(18);
 
   useEffect(() => {
     if (mantraid) {
@@ -85,6 +85,7 @@ export default function MainMantra() {
                 top: 20,
                 fontSize: fontSize,
                 marginBottom: 25,
+                textAlign:'center'
               }}
             >
               {mantra.title}

@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, FlatList } from "react-native";
+import { View, Text, ScrollView, FlatList, ActivityIndicator } from "react-native";
 import React, { useEffect, useState } from "react";
 import { db } from "./../config/FirebaseConfig";
 import { Colors } from "../constants/Colors";
@@ -7,12 +7,14 @@ import BhajanCard from "./BhajanCard";
 
 export default function GB() {
   const [bhajanList, setBhajanList] = useState();
+  const [loading,setLoading]=useState(false);
 
   useEffect(() => {
     GetBhajanData();
   }, []);
 
   const GetBhajanData = async () => {
+    setLoading(true);
     setBhajanList([]);
     const q = query(collection(db, "bhajan"), orderBy("order"));
     const querySnapshot = await getDocs(q);
@@ -23,10 +25,19 @@ export default function GB() {
       bhajans.push({ id: doc.id, ...doc.data() });
     });
     setBhajanList(bhajans);
+    setLoading(false);
   };
 
   return (
     <View>
+      {loading?
+        <ActivityIndicator 
+        size={"large"}
+        color={Colors.primary}
+        style={{
+          marginTop:"100%"
+        }}
+        /> : 
       <ScrollView>
         <View
           style={{
@@ -63,7 +74,7 @@ export default function GB() {
             keyExtractor={(item) => item.id}
           />
         </View>
-      </ScrollView>
+      </ScrollView>}
     </View>
   );
 }

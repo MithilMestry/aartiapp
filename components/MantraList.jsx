@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, FlatList, TextInput } from "react-native";
+import { View, Text, ScrollView, FlatList, TextInput, ActivityIndicator } from "react-native";
 import React, { useEffect, useState } from "react";
 import { collection, getDocs, query, orderBy } from "firebase/firestore";
 import { db } from "./../config/FirebaseConfig";
@@ -9,6 +9,7 @@ export default function MantraList() {
   const [mantraList, setMantraList] = useState([]);
   const [filteredMantraList, setFilteredMantraList] = useState([]);
   const [search, setSearch] = useState("");
+  const [loading,setLoading]=useState(false);
 
   useEffect(() => {
     GetMantraList();
@@ -19,6 +20,7 @@ export default function MantraList() {
   }, [search, mantraList]);
 
   const GetMantraList = async () => {
+    setLoading(true);
     setMantraList([]);
     const q = query(collection(db, "mantra"), orderBy("order"));
     const querySnapShot = await getDocs(q);
@@ -30,6 +32,7 @@ export default function MantraList() {
     });
     setMantraList(mantras);
     setFilteredMantraList(mantras);
+    setLoading(false);
   };
 
   const filterMantraList = () => {
@@ -43,6 +46,15 @@ export default function MantraList() {
 
   return (
     <View>
+      {loading? 
+      <ActivityIndicator 
+      size={'large'}
+      color={Colors.primary}
+      style={{
+        marginTop:"100%"
+      }}
+      />:  
+    
       <ScrollView>
         <View
           style={{
@@ -94,7 +106,7 @@ export default function MantraList() {
             keyExtractor={(item) => item.id}
           />
         </View>
-      </ScrollView>
+      </ScrollView>}
     </View>
   );
 }
