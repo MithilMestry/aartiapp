@@ -85,6 +85,7 @@ export default function MainBhajan() {
                 top: 20,
                 fontSize: fontSize,
                 marginBottom: 25,
+                fontWeight:'500'
               }}
             >
               {bhajan.title}

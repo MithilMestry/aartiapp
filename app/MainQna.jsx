@@ -87,6 +87,8 @@ export default function MainQna() {
                 top: 20,
                 fontSize: fontSize,
                 marginBottom: 25,
+                fontWeight:'500'
+                
               }}
             >
               {qna.title}

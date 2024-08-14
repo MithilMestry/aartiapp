@@ -85,7 +85,8 @@ export default function MainMantra() {
                 top: 20,
                 fontSize: fontSize,
                 marginBottom: 25,
-                textAlign:'center'
+                textAlign:'center',
+                fontWeight:'500'
               }}
             >
               {mantra.title}

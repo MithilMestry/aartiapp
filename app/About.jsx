@@ -29,21 +29,21 @@ export default function About() {
     {
       title: "About Our App",
       content:
-        "Welcome to [App Name], your ultimate companion for exploring and deepening your knowledge of Hindu Dharma. Our app offers a comprehensive collection of spiritual resources designed to enrich your spiritual journey.",
+        "Welcome to Namah App, your ultimate companion for exploring and deepening your knowledge of Hindu Dharma. Our app offers a comprehensive collection of spiritual resources designed to enrich your spiritual journey.",
     },
     {
       title: "Our Purpose",
       content:
-        "At [App Name], our mission is to provide a convenient and accessible platform for individuals to connect with their faith and explore the rich traditions of Hinduism. We aim to bring the timeless wisdom and spiritual practices of Hindu Dharma to your fingertips.",
+        "At Namah App, our mission is to provide a convenient and accessible platform for individuals to connect with their faith and explore the rich traditions of Hinduism. We aim to bring the timeless wisdom and spiritual practices of Hindu Dharma to your fingertips.",
     },
     {
       title: "Key Features",
-      content: `Aartis: Discover a vast collection of aartis dedicated to various deities, perfect for your daily worship and special occasions.\n\nQ&A on Hindu Dharma: Find detailed answers to common questions about Hindu beliefs, practices, and philosophy.\n\nMantras: Access an extensive library of mantras for peace, prosperity, and protection, complete with meanings and chanting techniques.\n\nBhajans: Enjoy a diverse array of famous bhajans sung by renowned Saints, allowing you to connect with your faith through music.`,
+      content: `Aartis: Discover a vast collection of aartis dedicated to various devi devtas, perfect for your daily worship and special occasions.\n\nQ&A on Hindu Dharma: Find detailed answers to common questions about Hindu beliefs, practices, and philosophy.\n\nMantras: Access an extensive library of mantras for peace, prosperity, and protection, complete with meanings and chanting techniques.\n\nBhajans: Enjoy a diverse array of famous bhajans sung by renowned Saints, allowing you to connect with your faith through music.`,
     },
     {
       title: "Who Can Benefit",
       content:
-        "Whether you are a devout practitioner, a curious learner, or someone seeking spiritual enrichment, [App Name] is designed for you. Our app caters to all age groups and backgrounds, offering something for everyone.",
+        "Whether you are a devout practitioner, a curious learner, or someone seeking spiritual enrichment, Namah App is designed for you. Our app caters to all age groups and backgrounds, offering something for everyone.",
     },
     {
       title: "How to Use",
@@ -53,7 +53,7 @@ export default function About() {
     {
       title: "About Us",
       content:
-        "[App Name] is developed by a dedicated individual Mithil Mestry passionate about promoting spiritual knowledge and practice. For any queries or support, feel free to contact us at [contact information].",
+        "Namah App is developed by a dedicated individual passionate about promoting spiritual knowledge and practice. For any queries or support, feel free to contact us at [contact information].",
     },
     {
       title: "Future Updates",

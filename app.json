@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "aarti",
+    "name": "Namah",
     "slug": "aarti",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon2-1.png",
+    "icon": "./assets/images/icon.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./assets/images/splash-screen.png",
+      "image": "./assets/images/splashScreen2.png",
       "resizeMode": "cover",
       "backgroundColor": "#F8CB28"
     },
@@ -17,9 +17,10 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon1.png",
+        "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#F8CB28"
-      }
+      },
+      "package": "com.mithil1121.aarti"
     },
     "web": {
       "bundler": "metro",
@@ -31,6 +32,14 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "827f13af-0f0c-4fe1-bf1d-7b1244d7b537"
+      }
     }
   }
 }

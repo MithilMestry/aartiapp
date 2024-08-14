@@ -43,8 +43,8 @@ export default function QnaCard({ qna }) {
             <Image
               source={{ uri: qna.image }}
               style={{
-                width: 70,
-                height: 70,
+                width: 60,
+                height: 60,
                 padding: 5,
                 borderRadius: 10,
                 backgroundColor: Colors.primary,
@@ -54,9 +54,12 @@ export default function QnaCard({ qna }) {
 
           <Text
             style={{
-              marginTop: "8%",
+              marginTop:'4%',
               fontSize: 20,
+              width: "72%",
             }}
+             numberOfLines={1}
+            ellipsizeMode="tail"
           >
             {qna.title}
           </Text>

@@ -74,6 +74,7 @@ export default function MainAarti() {
               fontSize: 25,
               marginBottom: 25,
               textAlign: "center",
+              fontWeight:'500'
             }}
           >
             {aarti.title}
