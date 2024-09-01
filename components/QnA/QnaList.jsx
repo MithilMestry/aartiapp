@@ -52,7 +52,7 @@ export default function QnaList() {
               fontSize: 30,
             }}
           >
-           सत्यशोधक
+           तुम्हाला माहित आहे का ?
           </Text>
         </View>
 

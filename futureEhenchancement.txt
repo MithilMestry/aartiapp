@@ -6,4 +6,6 @@ add hindu granths
 
 add search filter in bhajan list
 
+Add Pooja vidhi in profile, where we give step by step Pooja vidhi for all Pooja like ganpati pujan, satyanarayan Pooja, rudrabhishek etc
+
 will add arti in english

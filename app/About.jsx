@@ -98,6 +98,16 @@ export default function About() {
           </Collapsible>
         </View>
       ))}
+              <Text
+          style={{
+            color: "#a7a6ba",
+            textAlign: "center",
+            marginTop: "20%",
+            marginBottom:"20%"
+          }}  
+        >
+          Developed by Mithil Mestry @2024
+        </Text>
     </ScrollView>
   );
 }
@@ -108,7 +118,7 @@ const styles = StyleSheet.create({
     marginTop: 25,
   },
   sectionContainer: {
-    marginBottom: 10,
+    marginBottom: 5,
   },
   header: {
     flexDirection: "row",

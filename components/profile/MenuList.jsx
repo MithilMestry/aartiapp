@@ -8,6 +8,7 @@ import {
   Linking,
   Pressable,
 } from "react-native";
+import { Colors } from "./../../constants/Colors";
 import { useRouter } from "expo-router";
 
 export default function MenuList() {
@@ -20,7 +21,7 @@ export default function MenuList() {
     }
     if (item.path === "share") {
       Share.share({
-        message: "Download The App at https://www.youtube.com/",
+        message: "Download The App at https://www.amazon.com/dp/B0DD3VMD8G/ref=apps_sf_sta",
       });
       return;
     }
@@ -54,11 +55,11 @@ export default function MenuList() {
     //   name: 'Granth',
     //   path: 'https://chatgpt.com/c/a7a34eaa-fad3-4376-b31f-d8efe3964f9f',
     // },
-    {
-      id: 4,
-      name: "Rate this App",
-      path: "rateApp",
-    },
+    // {
+    //   id: 4,
+    //   name: "Rate this App",
+    //   path: "rateApp",
+    // },
     {
       id: 5,
       name: "Share App",
@@ -70,18 +71,57 @@ export default function MenuList() {
     <>
       <View
         style={{
-          marginTop: "70%",
+          // marginTop: "70%",
         }}
       >
+        <View
+          style={{
+            padding: 80,
+            backgroundColor: Colors.gray,
+          }}
+        >
+          <Text
+            style={{
+              textAlign: "center",
+              fontSize: 30,
+            }}
+          >
+           Profile
+          </Text>
+        </View>
+
+        <View
+          style={{
+            backgroundColor: "#fff",
+            borderTopRightRadius: 35,
+            borderTopLeftRadius: 35,
+            height:"80%",
+            marginTop: -25,
+          }}
+        >
+
         <FlatList
+        style={{
+          marginTop:"20%",
+          
+        }}
           data={menulist}
           renderItem={({ item }) => (
             <TouchableOpacity onPress={() => handleClick(item)}>
               <Text
                 style={{
-                  marginTop: 30,
+                  marginTop: 8,
                   fontSize: 25,
-                  marginLeft: 20,
+                  // marginLeft: 20,
+                  margin: 15,
+                  display: "flex",
+                  flexDirection: "row",
+                  borderWidth: 1.5,
+                  borderColor: "#d9d9d9",
+                  borderRadius: 10,
+                  // gap: 10,
+                  padding:10,
+                  // marginBottom: 8,
                 }}
               >
                 {item.name}
@@ -90,16 +130,9 @@ export default function MenuList() {
           )}
           keyExtractor={(item) => item.id.toString()}
         />
+        </View>
 
-        <Text
-          style={{
-            color: "#a7a6ba",
-            textAlign: "center",
-            marginTop: "30%",
-          }}
-        >
-          Developed by Mithil Mestry @2024
-        </Text>
+
       </View>
     </>
   );
