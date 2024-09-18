@@ -53,7 +53,7 @@ export default function About() {
     {
       title: "About Us",
       content:
-        "Namah App is developed by a dedicated individual passionate about promoting spiritual knowledge and practice. For any queries or support, feel free to contact us at [contact information].",
+        "Namah App is developed by a dedicated individual passionate about promoting spiritual knowledge and practice. For any queries or support, feel free to contact us at [namah.app.dev@gmail.com].",
     },
     {
       title: "Future Updates",
